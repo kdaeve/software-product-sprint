@@ -34,7 +34,7 @@ function addRandomFact() {
     const facts = 
         ['Tech Guy', 'Hiking', 'Travel', 'Aerospace'];
     
-    // Picl a random fact.
+    // Pick a random fact.
     const fact = facts[Math.floor(Math.random() * facts.length)];
 
     // Add it to the page.
