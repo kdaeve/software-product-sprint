@@ -52,13 +52,30 @@
       <p>Click <a href="https://www.linkedin.com/in/taylor-wu-503b28234/">here</a>  to redirect to my LinkedIn.</p>
       <p>Click <a href="https://www.github.com/kdaeve">here</a> to redirect to my GitHub.</p>
 
-      <form method="POST">
-        <p>Enter some text here:</p>
+      <form action="/form-handler" method="POST">
+        <p>Contact me:</p>
+
+        <p>
+            <label for="name">Enter your name:</label>
+            <input id="name" type="text" placeholder="Your name here" name="name" required>
+        </p>
+
+        <p>
+            <label for="email">Enter your E-mail:</label>
+            <input id="email" type="email" placeholder="Your E-mail here" name="email" required>
+        </p>
+
+        <p>
+            <label for="phone">Enter your phone number:</label>
+            <input id="phone" type="number" placeholder="Your phone number here" name="phone" required>
+        </p>
+
         <textarea name="text-input">hello world</textarea>
         <br/>
-        <input type="submit" />
-        <form action="/form-handler" method="POST">
-      </form>      
+        <input type="submit" value="Submit"/>
+
+      </form>
+    
     </div>
   </body>
   <body>
