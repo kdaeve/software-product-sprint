@@ -13,21 +13,6 @@
 // limitations under the License.
 
 /**
- * Adds a random greeting to the page.
- */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!', 'After all, tomorrow is another day.'];
-
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
-
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
-}
-
-/**
  * Adds a random fact to the page.
  */
 function addRandomFact() {
@@ -41,3 +26,12 @@ function addRandomFact() {
     const factContainer = document.getElementById('fact-container');
     factContainer.innerText = fact;
 }
+
+/** Fetches the current date from the server and adds it to the page. */
+async function showServerTime() {
+    const responseFromServer = await fetch('/date');
+    const textFromResponse = await responseFromServer.text();
+  
+    const dateContainer = document.getElementById('date-container');
+    dateContainer.innerText = textFromResponse;
+  }
