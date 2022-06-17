@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/page-views")
 public class PageViewServlet extends HttpServlet {
 
-  private int pageViews = 0;
+  private static int pageViews = 0;
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
