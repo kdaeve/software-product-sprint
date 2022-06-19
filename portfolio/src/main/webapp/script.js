@@ -12,12 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random fact to the page.
- */
+/** Adds a random fact to the page. */
 function addRandomFact() {
     const facts = 
-        ['Tech Guy', 'Hiking', 'Travel', 'Aerospace'];
+        ['Tech Guy', 'Hiking', 'Travel', 'Aerospace', 'Netflix'];
     
     // Pick a random fact.
     const fact = facts[Math.floor(Math.random() * facts.length)];
@@ -34,4 +32,21 @@ async function showServerTime() {
   
     const dateContainer = document.getElementById('date-container');
     dateContainer.innerText = textFromResponse;
-  }
+}
+
+/** Adds random quotes to the html page. */
+async function printString() {
+    const getResponseFromServer = await fetch('/quotes');
+    const jsonFromResponse = await getResponseFromServer.json();
+    console.log(jsonFromResponse);
+
+    const stringContainer = document.getElementById('life-quote-container');
+    stringContainer.innerHTML = getRandomQuote(jsonFromResponse);
+}
+
+/** Gets random quote from server. */
+function getRandomQuote(jsonFromResponse) {
+    const randomIndex = Math.floor(Math.random() * jsonFromResponse.quotes.length);
+    const randomQuote = jsonFromResponse.quotes[randomIndex];
+    return randomQuote;
+}

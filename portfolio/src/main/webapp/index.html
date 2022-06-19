@@ -5,8 +5,9 @@
     <title>Yuntian Wu</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    
   </head>
-  <body>
+  <body onload="showString()">
     <div id="content">
       <h1>Yuntian Wu</h1>
       <div class="navigation">
@@ -15,8 +16,8 @@
           <div><a href="contact.html">Contact</a></div>
       </div>
 
+      <!-- Add informations about my background. -->
       <div>
-          <!-- Add informations about my background. -->
           <h3>About Me</h3>
           <p>
             My name is Yuntian Wu, and I am a junior student at UC San Diego studying Mathematics-Computer Science. 
@@ -27,10 +28,16 @@
           </p>
       </div>
 
+      <!-- Add random fact about me. -->
       <div>
         <p>If you want to know some facts about me, click here:</p>
-        <button onlick="addRandomFact()">Start</button>
-        <div id='fact-container'></div>
+        <button onclick="addRandomFact()">Click here for a random fact:</button>
+        <div id="fact-container"></div>
+      </div>
+
+      <div>
+          <p>Quote of the Day:</p>
+          <p id="life-quote-container"></p>
       </div>
   </body>
 
