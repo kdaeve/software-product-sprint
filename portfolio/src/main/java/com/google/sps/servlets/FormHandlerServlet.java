@@ -14,7 +14,7 @@ public class FormHandlerServlet extends HttpServlet {
 
     // Get the value entered in the form.
     String nameValue = request.getParameter("name");
-    String textValue = request.getParameter("text-input");
+    String textValue = request.getParameter("messageInput");
     String emailValue = request.getParameter("email");
     String phoneValue = request.getParameter("phone");
 
