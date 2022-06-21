@@ -35,13 +35,13 @@ async function showServerTime() {
 }
 
 /** Adds random quotes to the html page. */
-async function printString() {
+async function printQuote() {
     const getResponseFromServer = await fetch('/quotes');
     const jsonFromResponse = await getResponseFromServer.json();
     console.log(jsonFromResponse);
 
-    const stringContainer = document.getElementById('life-quote-container');
-    stringContainer.innerHTML = getRandomQuote(jsonFromResponse);
+    const quoteContainer = document.getElementById('life-quote-container');
+    quoteContainer.innerHTML = getRandomQuote(jsonFromResponse);
 }
 
 /** Gets random quote from server. */
