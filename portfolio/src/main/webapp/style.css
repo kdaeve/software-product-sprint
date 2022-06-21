@@ -23,3 +23,9 @@
     font-size: 18px;
     font-weight: bold;
 }
+
+textarea {
+    resize: none;
+    width: 350px;
+    height: 150px;
+}
