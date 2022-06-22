@@ -46,11 +46,11 @@ async function printRandomQuote() {
 }
 
 /** Fetches contacts from the server and adds them to the DOM. */
-function loadContacts() {
-    fetch('/contacts-display').then(response => response.json()).then((contactList) => {
-      const contactListElement = document.getElementById('contact-list');
-      contactList.forEach((contactList) => {
-        contactListElement.appendChild(createContactElement(contactList));
-      })
-    });
-}
+// function loadContacts() {
+//     fetch('/contacts-display').then(response => response.json()).then((contactList) => {
+//       const contactListElement = document.getElementById('contact-list');
+//       contactList.forEach((contactList) => {
+//         contactListElement.appendChild(createContactElement(contactList));
+//       })
+//     });
+// }
