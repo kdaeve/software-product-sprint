@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /** Handles requests sent to the /quotes URL. Try running a server and navigating to /quotes! */
 @WebServlet("/quotes")
 public class MyQuotesServlet extends HttpServlet {
-    String[] quotes = {"A wise man can learn more from his enemies than a fool from his friends.",
+    private String[] quotes = {"A wise man can learn more from his enemies than a fool from his friends.",
                      "Don’t let anyone ever make you feel like you don’t deserve what you want.",
                      "Great men are not born great, they grow great.",
                      "Life is not the amount of breaths you take. It’s the moments that take your breath away.",
@@ -24,21 +24,11 @@ public class MyQuotesServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-        String json = convertToJsonUsingGson(quotes);
+        Gson gson = new Gson();
+        String json = gson.toJson(quotes);
 
         // Send the JSON as the response
         response.setContentType("application/json;");
         response.getWriter().println(json);
-    }
-
-    /**
-     * Converts a quotes instance into a JSON string using the Gson library. Note: We first added
-     * the Gson library dependency to pom.xml.
-     */
-    private String convertToJsonUsingGson(String[] quotes) {
-        Gson gson = new Gson();
-        String json = gson.toJson(quotes);
-        return json;
     }
 }
