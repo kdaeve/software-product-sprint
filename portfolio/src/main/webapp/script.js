@@ -35,18 +35,22 @@ async function showServerTime() {
 }
 
 /** Adds random quotes to the html page. */
-async function printString() {
+async function printRandomQuote() {
     const getResponseFromServer = await fetch('/quotes');
-    const jsonFromResponse = await getResponseFromServer.json();
-    console.log(jsonFromResponse);
+    const quotes = await getResponseFromServer.json();
 
-    const stringContainer = document.getElementById('life-quote-container');
-    stringContainer.innerHTML = getRandomQuote(jsonFromResponse);
+    const quote = quotes[Math.floor(Math.random() * quotes.length)];
+
+    const quoteContainer = document.getElementById('life-quote-container');
+    quoteContainer.innerHTML = quote;
 }
 
-/** Gets random quote from server. */
-function getRandomQuote(jsonFromResponse) {
-    const randomIndex = Math.floor(Math.random() * jsonFromResponse.quotes.length);
-    const randomQuote = jsonFromResponse.quotes[randomIndex];
-    return randomQuote;
-}
+/** Fetches contacts from the server and adds them to the DOM. */
+// function loadContacts() {
+//     fetch('/contacts-display').then(response => response.json()).then((contactList) => {
+//       const contactListElement = document.getElementById('contact-list');
+//       contactList.forEach((contactList) => {
+//         contactListElement.appendChild(createContactElement(contactList));
+//       })
+//     });
+// }
