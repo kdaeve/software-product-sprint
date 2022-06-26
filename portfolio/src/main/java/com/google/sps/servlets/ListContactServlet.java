@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /** Servlet responsible for listing contacts. */
-@WebServlet("/contact.html/messages")
+@WebServlet("/messages")
 public class ListContactServlet extends HttpServlet {
 
   @Override

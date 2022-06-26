@@ -44,13 +44,3 @@ async function printRandomQuote() {
     const quoteContainer = document.getElementById('life-quote-container');
     quoteContainer.innerHTML = quote;
 }
-
-/** Fetches contacts from the server and adds them to the DOM. */
-// function loadContacts() {
-//     fetch('/contacts-display').then(response => response.json()).then((contactList) => {
-//       const contactListElement = document.getElementById('contact-list');
-//       contactList.forEach((contactList) => {
-//         contactListElement.appendChild(createContactElement(contactList));
-//       })
-//     });
-// }
